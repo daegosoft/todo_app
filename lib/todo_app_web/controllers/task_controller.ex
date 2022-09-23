@@ -28,7 +28,7 @@ defmodule TodoAppWeb.TaskController do
 
   def show(conn, %{"id" => id}) do
     task = Todos.get_task!(id)
-    render(conn, "show.html", task: task)
+    render(conn, "index.html", task: task)
   end
 
   def edit(conn, %{"id" => id}) do
