@@ -22,13 +22,13 @@ defmodule TodoAppWeb.TaskController do
         |> redirect(to: Routes.task_path(conn, :show, task))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "index.html", changeset: changeset)
     end
   end
 
   def show(conn, %{"id" => id}) do
     task = Todos.get_task!(id)
-    render(conn, "index.html", task: task)
+    render(conn, "show.html", task: task)
   end
 
   def edit(conn, %{"id" => id}) do

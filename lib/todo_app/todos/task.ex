@@ -2,6 +2,7 @@ defmodule TodoApp.Todos.Task do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @derive {Jason.Encoder, only: [:description, :id]}
   schema "tasks" do
     field :description, :string
     field :done, :boolean, default: false
