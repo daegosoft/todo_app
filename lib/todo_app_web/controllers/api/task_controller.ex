@@ -8,7 +8,7 @@ defmodule TodoAppWeb.API.TaskController do
         tasks = Todos.list_tasks()
         conn
         |> put_resp_header("Content-Type", "json++")
-        |> put_status(:unauthorized)
-        |> json(%{tasks: tasks})
+        |> put_status(:created)
+        |> json("index.json", tasks: tasks)
     end
 end
